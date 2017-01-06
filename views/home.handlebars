@@ -1,2 +1,22 @@
-<h1>Strava username: {{username}}</h1>
-<p>Available properties: {{props}}</p>
+<div class="container">
+    <h1>Data from friends activites on Strava</h1>
+    {{#if data}}
+    <ul class="list-reset">
+        {{#each data}}
+        <li class="activity">
+            <article>
+                <h2 class="activity__athlete">{{this.athlete.firstname}} {{this.athlete.lastname}}</h2>
+                <p class="activity__type">{{this.type}}</p>
+                <p class="activitiy__distance">{{this.distance}}m</p>
+            </article>
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+    <pre>
+        <code>
+            {{props}}
+        </code>
+    </pre>
+</div>
